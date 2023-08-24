@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { useSearchParams , useRouter} from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 
 import { RxCross2 } from "react-icons/rx";
 import { BsFillMicFill } from "react-icons/bs";
@@ -17,9 +17,9 @@ export default function SearchBox() {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    if (!term.trim()) return;
+    if (!searchQuery.trim()) return;
 
-    router.push(`/search/web?searchTerm=${term}`);
+    router.push(`/search/web?searchTerm=${searchQuery}`);
   };
   return (
     <form
