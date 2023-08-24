@@ -9,7 +9,7 @@ import { TbGridDots } from "react-icons/tb";
 
 export default function SearchHeader() {
   return (
-    <header className="sticky top-0">
+    <header className="sticky top-0 bg-white">
       <div className="flex w-full p-6 items-center justify-between">
         <Link href="/">
           <Image
