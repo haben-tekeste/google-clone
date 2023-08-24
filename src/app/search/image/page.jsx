@@ -3,9 +3,12 @@ import React from "react";
 import Link from "next/link";
 import ImageSearchResults from "@/components/ImageSearchResults";
 
-export default async function ImageSearchPage({ searchParams: { searchTerm } }) {
+export default async function ImageSearchPage({
+  searchParams: { searchTerm, start },
+}) {
+  const startIndex = start || "1";
   const response =
-    await fetch(`https://www.googleapis.com/customsearch/v1?key=${process.env.GOOGLE_API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchTerm}&searchType=image
+    await fetch(`https://www.googleapis.com/customsearch/v1?key=${process.env.GOOGLE_API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchTerm}&start=${startIndex}&searchType=image
   `);
   if (!response.ok) throw new Error("Something went wrong!");
   const data = await response.json();
